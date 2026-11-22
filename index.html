@@ -340,7 +340,6 @@ function render(){
  document.getElementById('stockSold').textContent=total+' eieren';
  document.getElementById('stockRemaining').textContent=stockRemaining()+' eieren';
  document.getElementById('tip').value=(Number(state.week.tip)||0).toFixed(2);
- document.getElementById('waffleActive').checked=!!state.week.waffleActive;
  document.getElementById('waffleTotal').textContent=totalWaffles();
  document.getElementById('history').innerHTML='<h3>Vorige weken</h3>'+(state.history.length?state.history.slice().reverse().map(h=>`<div class="panel"><div class="row"><b>${esc(h.date)}</b><strong>${h.sold} verkocht · ${h.order} besteld</strong></div><div class="muted">Maandag ${h.monday} · woensdag ${h.wednesday} · reserve ${h.reserve} · fooi €${(Number(h.tip)||0).toFixed(2).replace('.',',')} · voorraad over ${h.remainingStock??'—'} · stroopwafels ${h.stroopwafels??0}</div></div>`).join(''):'<p class="muted">Nog geen afgeronde weken.</p>');
  renderCustomers();
